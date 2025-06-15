@@ -3,3 +3,8 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+.socials-icons:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.3);
+}
