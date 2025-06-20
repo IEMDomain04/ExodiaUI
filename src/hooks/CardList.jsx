@@ -23,7 +23,11 @@ function CardList() {
 
     return(
         <section>
-
+            <div>
+                {cards.map((card) => (
+                    <h1></h1>
+                ))}
+            </div>
         </section>
     );
 }
