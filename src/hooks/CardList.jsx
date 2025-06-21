@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "";
+const API_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0";
 
 function CardList() {
   const [cards, setCards] = useState([]);
@@ -25,7 +25,7 @@ function CardList() {
 
   
   return (
-    <section className="cards-list grid grid-cols-2 px-30 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <section className="cards-list grid grid-cols-2 gap-3 md:grid-cols-2 lg:px-30 lg:grid-cols-3 xl:grid-cols-4">
 
       {cards.map((card) => (
         <div className="bg-black border border-white rounded-xl m-2 flex flex-col justify-center items-center text-center p-5">

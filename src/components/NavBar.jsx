@@ -1,12 +1,14 @@
 function NavBar() {
-    return(
-        <nav className="bg-black border-2 border-b-white">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>    
-        </nav>
-    );
+  return (
+    <nav className="bg-black border-2 border-b-white">
+      
+      <div className="flex flex-col items-center py-3">
+        
+        <img src="./assets/logo.png" alt="yu-gi-oh!" width={180} />
+      
+      </div>
+    </nav>
+  );
 }
 
 export default NavBar;
