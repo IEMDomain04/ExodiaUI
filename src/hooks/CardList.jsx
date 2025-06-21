@@ -25,11 +25,11 @@ function CardList() {
 
   
   return (
-    <section className="cards-list grid grid-cols-2 gap-3 md:grid-cols-2 lg:px-30 lg:grid-cols-3 xl:grid-cols-4">
+    <section className="cards-list grid grid-cols-2 px-3 gap-x-2 md:grid-cols-2 lg:px-30 lg:grid-cols-3 xl:grid-cols-4">
 
       {cards.map((card) => (
         <div className="bg-black border border-white rounded-xl m-2 flex flex-col justify-center items-center text-center p-5">
-          <img src={card.card_images[0].image_url} alt={card.name} width={120} />
+          <img className="w-30 md:w-50 xl:w-80" src={card.card_images[0].image_url} alt={card.name} />
           <h1 className="mt-3 text-yellow-200">{card.name}</h1>
           <a className="mt-3 text-amber-300" href="" target="_blank">SELECT</a>
         </div>
