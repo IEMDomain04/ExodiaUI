@@ -20,19 +20,21 @@ function CardList() {
       });
   });
 
+
   if (loading) return <p>LOADING!!</p>;
 
+  
   return (
-    <section className="grid grid-cols-2 p-3">
+    <section className="cards-list grid grid-cols-2 px-30 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
       {cards.map((card) => (
-        <div className="border border-black rounded-xl m-2 flex flex-col justify-center text-center items-center p-5">
-          <img
-            src={card.card_images[0].image_url}
-            alt={card.name}
-          />
-          <h1>{card.name}</h1>
+        <div className="bg-black border border-white rounded-xl m-2 flex flex-col justify-center items-center text-center p-5">
+          <img src={card.card_images[0].image_url} alt={card.name} width={120} />
+          <h1 className="mt-3 text-yellow-200">{card.name}</h1>
+          <a className="mt-3 text-amber-300" href="" target="_blank">SELECT</a>
         </div>
       ))}
+
     </section>
   );
 }

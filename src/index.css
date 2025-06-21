@@ -4,7 +4,13 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+body {
+  background: #000936;
+}
 
+@theme {
+  --color-bg1: #000936;
+}
 
 /* Footer: Social Media Icons */
 .socials-icons:hover {
