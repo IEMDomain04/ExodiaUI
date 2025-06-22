@@ -29,21 +29,21 @@ function CardList() {
         <div className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col">
           <img className="w-30 md:w-50 xl:w-80" src={card.card_images[0].image_url} alt={card.name} />
 
-          <div className="px-5 space-y-10">
+          <div className="mx-6 space-y-10">
             <div className="space-y-3">
-              <h3 className="text-xl mt-5 text-yellow-200">{card.name}</h3>
+              <h3 className="text-h3 font-bold tracking-wider mt-5 text-yellow-200">{card.name}</h3>
 
-              <div className="flex gap-2">
-                <div className="text-xs text-white bg-typeTag rounded-full px-5 py-2 mt-2">
+              <div className="flex gap-2 text-tag text-white">
+                <div className="bg-typeTag rounded-full px-5 py-1 mt-2">
                   <p>{card.type}</p>
                 </div>
-                <div className="text-xs text-white bg-attributeTag rounded-full px-5 py-2 mt-2">
+                <div className="bg-attributeTag rounded-full px-5 py-1 mt-2">
                   <p>{card.attribute}</p>
                 </div>
               </div>
             </div>
 
-            <a className="text-amber-400 mt-10" href="">Know more..</a>
+            <a className="text-amber-400" href="">Know more..</a>
           </div>
         </div>
       ))}

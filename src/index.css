@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Matrix';
+  src: url('/assets/fonts/Matrix-II-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Matrix', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -9,6 +16,11 @@ body {
 }
 
 @theme {
+  --text-h1: 30px;
+  --text-h2: 24px;
+  --text-h3: 20px;
+  --text-tag: 12px;
+  --text-desc: 12px;
   --color-darkColor: #121212;
   --color-typeTag: #0A84FF;
   --color-attributeTag: #B8860B;
