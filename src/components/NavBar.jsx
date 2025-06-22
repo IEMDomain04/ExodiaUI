@@ -4,7 +4,7 @@ function NavBar() {
       
       <div className="flex flex-col items-center py-3">
         
-        <img src="./assets/logo.png" alt="yu-gi-oh!" width={180} />
+        <img src="/assets/logo.png" alt="yu-gi-oh!" width={180} />
       
       </div>
     </nav>
