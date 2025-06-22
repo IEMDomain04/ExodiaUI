@@ -28,7 +28,7 @@ function CardList() {
       {cards.map((card) => (
         <div key={card.id} className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col justify-center items-center text-center">
           {/* Image of the Cards */}
-          <img className="w-30 md:w-50 xl:w-70" src={card.card_images[0].image_url} alt={card.name} />
+          <img className="card-image w-30 md:w-50 xl:w-70" src={card.card_images[0].image_url} alt={card.name} />
           <div className="text-white mt-3 space-y-8">
             <div className="space-y-2">
               {/* Name of the Cards */}
@@ -42,7 +42,7 @@ function CardList() {
                 <p className="bg-raceTag rounded-full border border-white w-fit px-5 py-1">{card.race}</p>
               </div>
             </div>
-            <Link to={`/card/${card.id}`} className="text-amber-300"> KNOW MORE </Link>
+            <Link to={`/card/${card.id}`} className="know-more text-amber-300"> KNOW MORE </Link>
           </div>
         </div>
       ))}

@@ -31,6 +31,28 @@ body {
   --color-raceTag: #228B22;
 }
 
+/* Card Image */
+.card-image:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.card-image:focus {
+  transform: scale(.9);
+}
+
+/* Know more */
+.know-more:hover {
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 2px;
+  border-bottom: 1px solid white;
+}
+
+.know-more:focus {
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid blue;
+}
+
 /* Footer: Social Media Icons */
 .socials-icons:hover {
   transition: all 0.3s ease-in-out;
