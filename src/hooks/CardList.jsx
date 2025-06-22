@@ -20,21 +20,33 @@ function CardList() {
       });
   });
 
-
   if (loading) return <p>LOADING!!</p>;
 
-  
   return (
-    <section className="cards-list grid grid-cols-2 px-3 gap-x-2 md:grid-cols-2 lg:px-30 lg:grid-cols-3 xl:grid-cols-4">
-
+    <section className="cards-list grid grid-cols-2 px-3 mb-20 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4">
+      
       {cards.map((card) => (
-        <div className="bg-black border border-white rounded-xl m-2 flex flex-col justify-center items-center text-center p-5">
+        <div className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col">
           <img className="w-30 md:w-50 xl:w-80" src={card.card_images[0].image_url} alt={card.name} />
-          <h1 className="mt-3 text-yellow-200">{card.name}</h1>
-          <a className="mt-3 text-amber-300" href="" target="_blank">SELECT</a>
+
+          <div className="px-5 space-y-10">
+            <div className="space-y-3">
+              <h3 className="text-xl mt-5 text-yellow-200">{card.name}</h3>
+
+              <div className="flex gap-2">
+                <div className="text-xs text-white bg-typeTag rounded-full px-5 py-2 mt-2">
+                  <p>{card.type}</p>
+                </div>
+                <div className="text-xs text-white bg-attributeTag rounded-full px-5 py-2 mt-2">
+                  <p>{card.attribute}</p>
+                </div>
+              </div>
+            </div>
+
+            <a className="text-amber-400 mt-10" href="">Know more..</a>
+          </div>
         </div>
       ))}
-
     </section>
   );
 }

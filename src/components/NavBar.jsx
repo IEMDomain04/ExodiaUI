@@ -1,6 +1,6 @@
 function NavBar() {
   return (
-    <nav className="bg-black border-2 border-b-white">
+    <nav className="bg-darkColor border-2 border-b-white">
       
       <div className="flex flex-col items-center py-3">
         
