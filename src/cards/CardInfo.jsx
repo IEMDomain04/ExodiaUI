@@ -26,9 +26,9 @@ function CardInfo() {
   if (!card) return <p className="text-red-500">Card not found.</p>;
 
   return (
-    <section className="">
+    <section className="my-10">
         <button onClick={() => navigate(-1)} // ✅ Go back to the previous page
-        className="bg-amber-400 text-black m-10 px-4 py-2 rounded-md mb-10"
+        className="bg-amber-400 text-black mx-10 px-4 py-2 rounded-md mb-10"
       >
         ← Back
         </button>
