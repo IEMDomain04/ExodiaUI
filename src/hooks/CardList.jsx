@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const API_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0";
 
@@ -41,7 +42,7 @@ function CardList() {
                 <p className="bg-raceTag rounded-full border border-white w-fit px-5 py-1">{card.race}</p>
               </div>
             </div>
-            <a className="text-amber-300" href="">KNOW MORE </a>
+            <Link to={`/card/${card.id}`} className="text-amber-300"> KNOW MORE </Link>
           </div>
         </div>
       ))}
