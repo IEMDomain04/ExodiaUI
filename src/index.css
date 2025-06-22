@@ -9,7 +9,7 @@ body {
 }
 
 @theme {
-  --color-cardBackground: #121212;
+  --color-darkColor: #121212;
   --color-typeTag: #0A84FF;
   --color-attributeTag: #B8860B;
   --color-attackTag: #8B0000;
