@@ -23,27 +23,25 @@ function CardList() {
   if (loading) return <p>LOADING!!</p>;
 
   return (
-    <section className="cards-list grid grid-cols-2 px-3 mb-20 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4">
-      
+    <section className="cards-list grid grid-cols-2 px-3 my-20 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {cards.map((card) => (
-        <div className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col">
-          <img className="w-30 md:w-50 xl:w-80" src={card.card_images[0].image_url} alt={card.name} />
-
-          <div className="mx-6 space-y-10">
-            <div className="space-y-3">
-              <h3 className="text-h3 font-bold tracking-wider mt-5 text-yellow-200">{card.name}</h3>
-
-              <div className="flex gap-2 text-tag text-white">
-                <div className="bg-typeTag rounded-full px-5 py-1 mt-2">
-                  <p>{card.type}</p>
-                </div>
-                <div className="bg-attributeTag rounded-full px-5 py-1 mt-2">
-                  <p>{card.attribute}</p>
-                </div>
+        <div key={card.id} className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col justify-center items-center text-center">
+          {/* Image of the Cards */}
+          <img className="w-30 md:w-50 xl:w-70" src={card.card_images[0].image_url} alt={card.name} />
+          <div className="text-white mt-3 space-y-8">
+            <div className="space-y-2">
+              {/* Name of the Cards */}
+              <h1 className="text-h4 font-bold">{card.name}</h1>
+              {/* Tags of the Cards */}
+              <div className="text-tag flex flex-wrap justify-center gap-1">
+                <p className="bg-typeTag rounded-full border border-white w-fit px-5 py-1">{card.type}</p>
+                {card.attribute && (
+                  <p className="bg-attributeTag rounded-full border border-white w-fit px-5 py-1">{card.attribute}</p>
+                )}
+                <p className="bg-raceTag rounded-full border border-white w-fit px-5 py-1">{card.race}</p>
               </div>
             </div>
-
-            <a className="text-amber-400" href="">Know more..</a>
+            <a className="text-amber-300" href="">KNOW MORE </a>
           </div>
         </div>
       ))}
