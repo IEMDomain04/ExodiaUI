@@ -9,7 +9,13 @@ body {
 }
 
 @theme {
-  --color-bg1: #000936;
+  --color-cardBackground: #121212;
+  --color-typeTag: #0A84FF;
+  --color-attributeTag: #B8860B;
+  --color-attackTag: #8B0000;
+  --color-defenseTag: #003366;
+  --color-levelTag: #C04000;
+  --color-raceTag: #228B22;
 }
 
 /* Footer: Social Media Icons */
