@@ -1,12 +1,27 @@
-# React + Vite
+# Exodia UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Exodia UI** is a web-based application that displays a comprehensive list of Yu-Gi-Oh! cards using the [YGOPRODeck API](https://db.ygoprodeck.com/api-guide/). It offers a clean and responsive user interface to explore the vast world of Yu-Gi-Oh! cards.
 
-Currently, two official plugins are available:
+![Exodia UI Screenshot](public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Preview
 
-## Expanding the ESLint configuration
+[🔗 View Website Here](#)  
+*(Link will be available once deployed)*
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌟 Features
+
+- 🔍 View all available Yu-Gi-Oh! cards from the official database
+- 📱 Responsive UI design for both desktop and mobile
+- ⚡ Fast and lightweight frontend built with modern web technologies
+- 🖼️ Card image preview and information display
+
+## 🚧 Pending Updates
+
+I am actively working to improve the user experience. Upcoming features include:
+
+- [ ] **Search and Sorting Functionality**
+    - Search cards by name, type, and attribute
+    - Sort cards by ATK, DEF, Level, or card name.
+- [ ] **Create your Deck**
+    - Make your own deck and save it to your computer.
