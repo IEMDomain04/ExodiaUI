@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-function NavBar({ setSearchCard }) {
+function NavBar({ setSearchCard, setSortType, setSortRace, setSortAttribute }) {
   return (
     <nav className="bg-darkColor border-b-2">
       <div className="flex flex-col justify-center items-center gap-5 p-5 md:flex-row md:justify-around">
@@ -16,7 +16,7 @@ function NavBar({ setSearchCard }) {
         <div className="flex flex-wrap justify-center items-center gap-5">
           <Input className="text-white placeholder-white w-xs" onChange={(e) => setSearchCard(e.target.value)} type="text" placeholder="Search card..." />
 
-            <Select>
+            <Select onValueChange={setSortType}>
               <SelectTrigger className="w-[150px] md:w-[180px]">
                 <SelectValue placeholder="Select Type" />
               </SelectTrigger>
@@ -46,7 +46,7 @@ function NavBar({ setSearchCard }) {
           </Select>
 
 
-          <Select>
+          <Select onValueChange={setSortRace}>
             <SelectTrigger className="w-[150px] md:w-[180px]">
               <SelectValue placeholder="Select Race" />
             </SelectTrigger>
@@ -90,7 +90,7 @@ function NavBar({ setSearchCard }) {
             </SelectContent>
           </Select>
 
-          <Select>
+          <Select onValueChange={setSortAttribute}>
             <SelectTrigger className="w-[150px] md:w-[180px]">
               <SelectValue placeholder="Select Attribute" />
             </SelectTrigger>
