@@ -20,8 +20,5 @@
 
 I am actively working to improve the user experience. Upcoming features include:
 
-- [ ] **Search and Sorting Functionality**
-    - Search cards by name, type, and attribute
-    - Sort cards by ATK, DEF, Level, or card name.
 - [ ] **Create your Deck**
     - Make your own deck and save it to your computer.
