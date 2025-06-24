@@ -7,14 +7,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-function NavBar() {
+function NavBar({ setSearchCard }) {
   return (
     <nav className="bg-darkColor border-2 border-b-white">
       <div className="flex justify-around items-center py-3">
         <img src="/assets/logo.png" alt="yu-gi-oh!" width={180} />
 
         <div className="flex gap-10">
-          <Input className="text-white placeholder-white w-xs" type="text" placeholder="Search card..." />
+          <Input className="text-white placeholder-white w-xs" onChange={(e) => setSearchCard(e.target.value)} type="text" placeholder="Search card..." />
 
             <Select>
               <SelectTrigger className="w-[180px]">

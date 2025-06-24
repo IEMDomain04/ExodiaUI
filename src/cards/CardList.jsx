@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const API_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0";
 
-function CardList() {
+function CardList({ searchCard }) {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,11 +21,16 @@ function CardList() {
       });
   });
 
+  // Searching Function
+  const searchCards = cards.filter((card) =>
+    card.name.toLowerCase().includes(searchCard.toLowerCase().trim())
+  );
+
   if (loading) return <p>LOADING!!</p>;
 
   return (
     <section className="cards-list grid grid-cols-2 px-3 my-20 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      {cards.map((card) => (
+      {searchCards.map((card) => (
         <div key={card.id} className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col justify-center items-center text-center">
           {/* Image of the Cards */}
           <img className="card-image w-30 md:w-50 xl:w-70" src={card.card_images[0].image_url} alt={card.name} />
