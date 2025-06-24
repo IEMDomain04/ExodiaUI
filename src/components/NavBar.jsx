@@ -18,10 +18,10 @@ function NavBar({ setSearchCard, setSortType, setSortRace, setSortAttribute }) {
 
             <Select onValueChange={setSortType}>
               <SelectTrigger className="w-[150px] md:w-[180px]">
-                <SelectValue placeholder="Select Type" />
+                <SelectValue/>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Select Type">Select Type</SelectItem>
+                <SelectItem>Select Type</SelectItem>
                 <SelectItem value="Normal Monster">Normal Monster</SelectItem>
                 <SelectItem value="Effect Monster">Effect Monster</SelectItem>
                 <SelectItem value="Fusion Monster">Fusion Monster</SelectItem>
@@ -48,10 +48,10 @@ function NavBar({ setSearchCard, setSortType, setSortRace, setSortAttribute }) {
 
           <Select onValueChange={setSortRace}>
             <SelectTrigger className="w-[150px] md:w-[180px]">
-              <SelectValue placeholder="Select Race" />
+              <SelectValue/>
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Select Race">Select Race</SelectItem>
+              <SelectItem>Select Race</SelectItem>
               <SelectItem value="Aqua">Aqua</SelectItem>
               <SelectItem value="Beast">Beast</SelectItem>
               <SelectItem value="Beast-Warrior">Beast-Warrior</SelectItem>
@@ -92,10 +92,10 @@ function NavBar({ setSearchCard, setSortType, setSortRace, setSortAttribute }) {
 
           <Select onValueChange={setSortAttribute}>
             <SelectTrigger className="w-[150px] md:w-[180px]">
-              <SelectValue placeholder="Select Attribute" />
+              <SelectValue/>
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Select Attribute">Select Attribute</SelectItem>
+              <SelectItem>Select Attribute</SelectItem>
               <SelectItem value="DARK">DARK</SelectItem>
               <SelectItem value="LIGHT">LIGHT</SelectItem>
               <SelectItem value="EARTH">EARTH</SelectItem>
