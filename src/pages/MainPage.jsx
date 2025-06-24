@@ -6,11 +6,14 @@ import Footer from '../components/Footer';
 function MainPage() {
 
     const [searchCard, setSearchCard] = useState('');
+    const [sortType, setSortType] = useState(''); 
+    const [sortRace, setSortRace] = useState('');
+    const [sortAttribute, setSortAttribute] = useState('');
 
     return (
         <main>
-            <NavBar setSearchCard={setSearchCard}/>
-            <CardList searchCard={searchCard} />
+            <NavBar setSearchCard={setSearchCard} setSortType={setSortType} setSortRace={setSortRace} setSortAttribute={setSortAttribute}/>
+            <CardList searchCard={searchCard} sortType={sortType} sortRace={sortRace} sortAttribute={sortAttribute} />
             <Footer />
         </main>
     );
