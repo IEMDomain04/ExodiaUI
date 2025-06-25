@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import CreateDeck from "./cards/CreateDeck";
+import CreateDeck from "./pages/CreateDeck";
 import MainPage from "./pages/MainPage";
 import InfoPage from "./pages/InfoPage";
 
