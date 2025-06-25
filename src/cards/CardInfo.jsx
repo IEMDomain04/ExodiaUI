@@ -47,11 +47,11 @@ function CardInfo() {
           {/* Text, Tags, Description */}
           <div className="space-y-10">
             <div className="space-y-3">
-              <div className="flex flex-col text-center gap-8">
+              <div className="flex flex-col text-center gap-8 mb-10">
                 <h1 className="text-h1 font-bold tracking-widest">{card.name}</h1>
                 <h2 className="text-h3 text-blue-300 tracking-wide">{card.type}</h2>
               </div>
-              <div className="flex justify-center gap-5">
+              <div className="flex flex-wrap justify-center gap-5">
                 {card.atk && (
                   <p className="bg-attackTag rounded-full border border-white w-fit px-5 py-1">
                     ATK: {card.atk}
