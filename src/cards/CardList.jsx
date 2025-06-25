@@ -19,6 +19,7 @@ function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
       .then((resp) => resp.json())
       .then((data) => {
         setAllCards(data.data || []);
+        setLoading(false);
       })
       .catch((error) => {
         setLoading(false);
