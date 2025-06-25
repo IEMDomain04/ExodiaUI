@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Loading from "@/components/Loading";
 
 const API_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 
@@ -24,8 +25,8 @@ function CardInfo() {
   }, [id]);
 
   // Loading and Card not Found
-  if (loading) return <p className="text-white">Loading...</p>;
-  if (!card) return <p className="text-red-500">Card not found.</p>;
+  if (loading) return <Loading message="Summoning card information..." />;
+  if (!card) return <Loading message="Card not found!" />;
 
   return (
     <section className="my-10">
