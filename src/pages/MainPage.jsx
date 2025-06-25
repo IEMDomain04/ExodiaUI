@@ -4,9 +4,9 @@ import CardList from "../cards/CardList";
 import Footer from "../components/Footer";
 
 function MainPage() {
-  const [searchCard, setSearchCard] = useState("");
   const [sortType, setSortType] = useState("");
   const [sortRace, setSortRace] = useState("");
+  const [searchCard, setSearchCard] = useState("");
   const [sortAttribute, setSortAttribute] = useState("");
 
   return (
