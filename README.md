@@ -4,11 +4,6 @@
 
 ![Exodia UI Screenshot](public/preview.png)
 
-## 🌐 Live Preview
-
-[🔗 View Website Here](#)  
-*(Link will be available once deployed)*
-
 ## 🌟 Features
 
 - 🔍 View all available Yu-Gi-Oh! cards from the official database
