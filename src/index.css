@@ -66,6 +66,18 @@ body {
   --color-raceTag: #228B22;
 }
 
+/* Button */
+.btn:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+  background: rgb(104, 12, 127);
+}
+
+.btn:focus {
+  background: rgb(154, 11, 189);
+}
+
 /* Card Image */
 .card-image:hover {
   transition: all 0.3s ease-in-out;
