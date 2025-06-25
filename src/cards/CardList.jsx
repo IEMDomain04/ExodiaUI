@@ -1,56 +1,58 @@
-import { Button } from "@/components/ui/button"
-import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-const API_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0";
 
 function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
   const navigate = useNavigate();
-  const [cards, setCards] = useState([]);
+
+  const [allCards, setAllCards] = useState([]); // 🆕 all fetched cards
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(0); // 🆕 current pagination page
+  const CARDS_PER_PAGE = 20;
 
-  // Navigation for the Create deck page
-  const goToCreateDeck = () => {
-    navigate("/createDeck")
-  };
+  const goToCreateDeck = () => navigate("/createDeck");
 
-  // Fetch cards from the API
+  // Fetch all cards once
   useEffect(() => {
-    fetch(API_URL)
+    setLoading(true);
+    fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php")
       .then((resp) => resp.json())
       .then((data) => {
-        setCards(data.data);
+        setAllCards(data.data || []);
         setLoading(false);
       })
       .catch((error) => {
         setLoading(false);
         console.error("FETCHING CARDS ERROR: ", error);
       });
+  }, []);
+
+  // Filtered and sorted cards from ALL cards
+  const filteredCards = allCards.filter((card) => {
+    const matchesSearch = card.name.toLowerCase().includes(searchCard.toLowerCase().trim());
+    const matchesType = sortType ? card.type === sortType : true;
+    const matchesRace = sortRace ? card.race === sortRace : true;
+    const matchesAttribute = sortAttribute ? card.attribute === sortAttribute : true;
+    return matchesSearch && matchesType && matchesRace && matchesAttribute;
   });
 
-  // Sorting Function
-  const searchCards = cards.filter((card) => {
-  const matchesSearch = card.name.toLowerCase().includes(searchCard.toLowerCase().trim());
-  const matchesType = sortType ? card.type === sortType : true;
-  const matchesRace = sortRace ? card.race === sortRace : true;
-  const matchesAttribute = sortAttribute ? card.attribute === sortAttribute : true;
+  const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE);
 
-  return matchesSearch && matchesType && matchesRace && matchesAttribute;
-});
+  // Paginated view of filtered cards
+  const paginatedCards = filteredCards.slice(page * CARDS_PER_PAGE, (page + 1) * CARDS_PER_PAGE);
 
   if (loading) return <p>LOADING!!</p>;
 
   return (
-    <main className="border border-white">
+    <main>
       {/* Create Deck Button Navigation */}
-      <div className="flex flex-col items-center my-10 gap-5">
+      <div className="flex flex-col items-center my-5 gap-5 md:flex-row-reverse md:justify-start md:mr-20">
         <h1 className="text-h4 text-center">Build and Save your own Deck!</h1>
         <Button onClick={goToCreateDeck} className="btn bg-purple-950 shadow shadow-white">Make your deck</Button>
       </div>
       {/* List of Cards */}
-      <section className="cards-list grid grid-cols-2 px-3 mb-20 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {searchCards.map((card) => (
+      <section className="cards-list grid grid-cols-2 px-3 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        {paginatedCards.map((card) => (
           <div key={card.id} className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col justify-center items-center text-center">
             {/* Image of the Cards */}
             <img className="card-image w-30 md:w-50 xl:w-70" src={card.card_images[0].image_url} alt={card.name} />
@@ -72,6 +74,26 @@ function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
           </div>
         ))}
       </section>
+      {/* Pagination Controls */}
+      {filteredCards.length > CARDS_PER_PAGE && (
+        <div className="flex justify-center items-center gap-4 my-10">
+          <Button
+            className="btn2" variant="secondary"
+            disabled={page === 0}
+            onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
+          >
+            Previous
+          </Button>
+          <span className="text-white">Page {page + 1} of {totalPages}</span>
+          <Button
+            className="btn2" variant="secondary"
+            disabled={page >= totalPages - 1}
+            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages - 1))}
+          >
+            Next
+          </Button>
+        </div>
+      )}
     </main>
   );
 }

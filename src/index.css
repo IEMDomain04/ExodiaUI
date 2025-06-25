@@ -78,6 +78,18 @@ body {
   background: rgb(154, 11, 189);
 }
 
+/* Button2 */
+.btn2:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+  background: rgb(215, 215, 215);
+}
+
+.btn2:focus {
+  background: rgb(109, 109, 109);
+}
+
 /* Card Image */
 .card-image:hover {
   transition: all 0.3s ease-in-out;
