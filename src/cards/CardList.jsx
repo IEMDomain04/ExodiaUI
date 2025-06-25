@@ -53,7 +53,7 @@ function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
         <Button onClick={goToCreateDeck} className="btn bg-purple-950 shadow shadow-white">Make your deck</Button>
       </div>
       {/* List of Cards */}
-      <section className="cards-list grid grid-cols-2 px-3 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <section className="cards-list grid grid-cols-1 px-3 gap-x-2 md:grid-cols-2 lg:px-14 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {paginatedCards.map((card) => (
           <div key={card.id} className="bg-darkColor border border-white rounded-xl p-3 m-3 flex flex-col justify-center items-center text-center">
             {/* Image of the Cards */}
