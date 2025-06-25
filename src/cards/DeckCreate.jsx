@@ -8,7 +8,7 @@ function DeckCreate() {
         navigate('/');
     }
   return (
-    <div className="flex flex-col justify-center items-center my-30 gap-4 text-white md:my-50">
+    <div className="flex flex-col justify-center items-center my-30 gap-4 text-white md:my-80">
       <img
         src="/assets/logo.png" // replace with your logo or an animated loader
         alt="Loading Yu-Gi-Oh Cards"
