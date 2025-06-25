@@ -8,6 +8,7 @@ function CreateDeck() {
   const [sortRace, setSortRace] = useState("");
   const [searchCard, setSearchCard] = useState("");
   const [sortAttribute, setSortAttribute] = useState("");
+  
   return (
     <>
       <NavBar 
