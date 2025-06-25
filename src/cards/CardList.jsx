@@ -3,13 +3,13 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
-  const navigate = useNavigate();
-
-  const [allCards, setAllCards] = useState([]); // 🆕 all fetched cards
+  const [allCards, setAllCards] = useState([]); 
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(0); // 🆕 current pagination page
+  const [page, setPage] = useState(0); 
+  const navigate = useNavigate();
   const CARDS_PER_PAGE = 20;
 
+  // Go to other page
   const goToCreateDeck = () => navigate("/createDeck");
 
   // Fetch all cards once

@@ -1,7 +1,7 @@
 function DeckCreate() {
     return(
         <section>
-            Hellooo
+            
         </section>
     );
 }
