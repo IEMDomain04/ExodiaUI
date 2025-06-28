@@ -13,6 +13,11 @@ function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
   // Go to other page
   const goToCreateDeck = () => navigate("/createDeck");
 
+  // Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
+
   // Fetch all cards once
   useEffect(() => {
     setLoading(true);
@@ -80,20 +85,26 @@ function CardList({ searchCard, sortType, sortRace, sortAttribute }) {
       {filteredCards.length > CARDS_PER_PAGE && (
         <div className="flex justify-center items-center gap-4 my-10">
           <Button
-            className="btn2" variant="secondary"
-            disabled={page === 0}
-            onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
-          >
-            Previous
-          </Button>
-          <span className="text-white">Page {page + 1} of {totalPages}</span>
-          <Button
-            className="btn2" variant="secondary"
-            disabled={page >= totalPages - 1}
-            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages - 1))}
-          >
-            Next
-          </Button>
+                className="btn2" variant="secondary"
+                disabled={page === 0}
+                onClick={(e) => {
+                  setPage((prev) => Math.max(prev - 1, 0));
+                  e.currentTarget.blur();
+                }}
+              >
+                Previous
+            </Button>
+            <span className="text-white">Page {page + 1} of {totalPages}</span>
+            <Button
+                className="btn2" variant="secondary"
+                disabled={page >= totalPages - 1}
+                onClick={(e) => {
+                  setPage((prev) => Math.min(prev + 1, totalPages - 1));
+                  e.currentTarget.blur();
+                }}
+              >
+                Next
+            </Button>
         </div>
       )}
     </main>
