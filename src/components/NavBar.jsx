@@ -11,7 +11,7 @@ function NavBar({ setSearchCard, setSortType, setSortRace, setSortAttribute }) {
   return (
     <nav className="bg-darkColor border-b-2">
       <div className="flex flex-col justify-center items-center gap-5 p-5 md:flex-row md:justify-around">
-        <img src="/assets/logo.png" alt="yu-gi-oh!" width={180} />
+        <img src="/assets/exodiaui-logo-extend.png" alt="yu-gi-oh!" width={180} />
 
         <div className="flex flex-wrap justify-center items-center gap-5">
           <Input className="text-white placeholder-white w-xs" onChange={(e) => setSearchCard(e.target.value)} type="text" placeholder="Search card..." />
