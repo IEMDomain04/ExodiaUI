@@ -1,27 +1,27 @@
 const socials = [
-  {
-    src: "/assets/socials/github.svg",
-    href: "https://github.com/IEMDomain04",
-    alt: "GitHub",
-  },
+  // {
+  //   src: "/assets/socials/github.svg",
+  //   href: "https://github.com/IEMDomain04",
+  //   alt: "GitHub",
+  // },
 
-  {
-    src: "/assets/socials/linkedin.svg",
-    href: "https://www.linkedin.com/in/emman-manduriaga0044/",
-    alt: "LinkedIn",
-  },
+  // {
+  //   src: "/assets/socials/linkedin.svg",
+  //   href: "https://www.linkedin.com/in/emman-manduriaga0044/",
+  //   alt: "LinkedIn",
+  // },
 
-  {
-    src: "/assets/socials/facebook.svg",
-    href: "https://www.facebook.com/emman.manduriaga.7",
-    alt: "Facebook",
-  },
+  // {
+  //   src: "/assets/socials/facebook.svg",
+  //   href: "https://www.facebook.com/emman.manduriaga.7",
+  //   alt: "Facebook",
+  // },
 
-  {
-    src: "/assets/socials/notion.svg",
-    href: "https://iememman.notion.site/",
-    alt: "Notion",
-  },
+  // {
+  //   src: "/assets/socials/notion.svg",
+  //   href: "https://iememman.notion.site/",
+  //   alt: "Notion",
+  // },
 ];
 
 function Footer() {
@@ -29,7 +29,7 @@ function Footer() {
     <footer className="bg-gray-800 text-white py-6">
       <div className="flex flex-col md:flex-row justify-around items-center">
         <div className="text-center space-y-5 mb-4 md:text-left md:mb-0">
-          <p>Created by Emman Manduriaga</p>
+          <p>Created by Emman</p>
 
           {/* Social Media Icons */}
           <div className="flex justify-around md:justify-start">
